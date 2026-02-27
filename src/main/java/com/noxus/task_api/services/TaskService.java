@@ -38,4 +38,12 @@ public class TaskService {
             throw new RuntimeException("Task not found");
         }
     }
+
+    public void delete(Long id) {
+        try {
+        this.taskRepository.deleteById(id);
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Error to delete task");
+        }
+    }
 }
